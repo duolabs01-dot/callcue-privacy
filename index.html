@@ -536,7 +536,7 @@ function App(){
           <a href="#privacy">Privacy</a>
           <a href="#install">Install</a>
         </div>
-        <a href="#install" className="nav-cta">Add to Chrome <Icon name="arrow-right" size={12}/></a>
+        <a href="#install" className="nav-cta">Get early access <Icon name="arrow-right" size={12}/></a>
       </div>
     </nav>
 
@@ -545,9 +545,9 @@ function App(){
         <div className="reveal in">
           <span className="eyebrow"><span className="pulse"></span>For HubSpot · LemList · Beta</span>
           <h1>Know <SignalWord color="green" state={state} setState={setStateManual}>when</SignalWord> to call.<br/>Before you <SignalWord color="red" state={state} setState={setStateManual}>dial</SignalWord>.</h1>
-          <p className="sub">CallCue lives in your CRM and reads timezone, working hours, and call history — then tells you in one glance whether <em>now</em> is the right moment.</p>
+          <p className="sub">CallCue lives in your browser and reads timezone, working hours, and call history — then tells you in one glance whether <em>now</em> is the right moment.</p>
           <div className="hero-cta">
-            <a href="#install" className="btn btn-primary">Add to Chrome <Icon name="arrow-right" size={14}/></a>
+            <a href="#install" className="btn btn-primary">Get early access <Icon name="arrow-right" size={14}/></a>
             <a href="#how" className="btn btn-ghost">See how it works</a>
           </div>
           <div className="hero-meta">
@@ -569,7 +569,7 @@ function App(){
         </div>
         <div className="how-grid">
           {[
-            {color:'green',num:'01',title:'Right time',body:"Local time falls inside their working hours, you haven't called recently, and lifecycle signals are warm. Dial with confidence."},
+            {color:'green',num:'01',title:'Right time',body:"Local time falls inside their working hours and you haven't called recently. Everything checks out — dial with confidence."},
             {color:'amber',num:'02',title:'Caution',body:"It's their working hours, but borderline — early morning, lunch, end of day. CallCue surfaces the why so you can judge."},
             {color:'red',num:'03',title:"Don't call",body:"Late, weekend, or way outside hours. The orb flashes red and the panel suggests a better window."},
             {color:'gray',num:'04',title:'Unresolved',body:"No timezone, working hours, or location on file. CallCue can't make a recommendation — fill in the contact data first."}
@@ -590,7 +590,7 @@ function App(){
         <div className="sec-head reveal">
           <span className="eyebrow">Features</span>
           <h2>Built for the way <span className="serif">sales</span> actually works.</h2>
-          <p>No new dashboard. No login. CallCue overlays the tools your team already lives in.</p>
+          <p>No new dashboard. No login. CallCue works inside the tools your team already lives in.</p>
         </div>
         <div className="features">
           {[
@@ -663,7 +663,7 @@ function App(){
             {[
               {n:'1',h:'Download the zip',p:<>We'll email you the <code>Teamflect-CallCue-v0.3.32-chrome-store.zip</code>. Unpack it somewhere stable — Documents works.</>},
               {n:'2',h:'Open Chrome extensions',p:<>Visit <code>chrome://extensions</code> and toggle <strong>Developer mode</strong> on (top-right).</>},
-              {n:'3',h:'Load unpacked',p:<>Click <strong>Load unpacked</strong> and select the unpacked folder. CallCue's orb will appear next to your address bar.</>},
+              {n:'3',h:'Load unpacked',p:<>Click <strong>Load unpacked</strong> and select the unpacked folder. CallCue's floating launcher will appear on every contact page.</>},
               {n:'4',h:'Pin and open HubSpot',p:<>Pin the extension, head to a contact page, and the floating launcher will dock itself. You're live.</>}
             ].map((s,i)=>(
               <div key={s.n} className={`step ${i===2?'active':''}`}>
@@ -714,7 +714,7 @@ function App(){
           <p>Free during beta. No data collected. Uninstall any time.</p>
           <div className="hero-cta" style={{justifyContent:'center'}}>
             <a href="#" className="btn btn-primary">Request beta access <Icon name="arrow-right" size={14}/></a>
-            <a href="#privacy" className="btn btn-ghost">Read the privacy policy</a>
+            <a href="#privacy" className="btn btn-ghost">See our privacy breakdown</a>
           </div>
         </div>
       </div>
