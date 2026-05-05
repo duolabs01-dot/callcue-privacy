@@ -77,7 +77,8 @@ section{position:relative;z-index:2}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
 
 /* Hero */
-.hero{padding:140px 0 80px;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.hero{padding:140px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
 .hero h1{font-size:clamp(42px,6vw,84px);font-weight:600;letter-spacing:-.04em;line-height:.98;margin:18px 0 22px}
 .hero h1 .serif{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--orange);letter-spacing:-.02em}
 
@@ -319,7 +320,7 @@ body[data-density="airy"] .hero{padding:170px 0 100px}
 .tw-toggle-fab.hide{display:none}
 
 @media (max-width:900px){
-  .hero{grid-template-columns:1fr;gap:40px}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
   .stage{height:420px}
   .clock{width:340px;height:340px}
   .privacy-wrap,.install-wrap{grid-template-columns:1fr;gap:32px}
@@ -541,7 +542,7 @@ function App(){
     </nav>
 
     <section className="hero">
-      <div className="wrap" style={{gridColumn:'1 / -1',display:'grid',gridTemplateColumns:'1.1fr 1fr',gap:60,alignItems:'center'}}>
+      <div className="wrap hero-grid">
         <div className="reveal in">
           <span className="eyebrow"><span className="pulse"></span>For HubSpot · LemList · Beta</span>
           <h1>Know <SignalWord color="green" state={state} setState={setStateManual}>when</SignalWord> to call.<br/>Before you <SignalWord color="red" state={state} setState={setStateManual}>dial</SignalWord>.</h1>
