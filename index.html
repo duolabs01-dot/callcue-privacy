@@ -445,7 +445,7 @@ function SignalCycle({state,setState}){
       className={cls}
       data-active="true"
       onClick={()=>{
-        const next = order[(order.indexOf(state)+1)%3];
+        const next = order[(order.indexOf(state)+1)%4];
         setState(next);
       }}
       title="Click to cycle states"
@@ -564,7 +564,7 @@ function App(){
       <div className="wrap">
         <div className="sec-head reveal">
           <span className="eyebrow">How it works</span>
-          <h2>One orb. Three <SignalCycle state={state} setState={setStateManual}/>. Zero guesswork.</h2>
+          <h2>One orb. Four <SignalCycle state={state} setState={setStateManual}/>. Zero guesswork.</h2>
           <p>Watch the launcher change color as you move between contacts. The dot tells you everything before you've finished reading their name.</p>
         </div>
         <div className="how-grid">
