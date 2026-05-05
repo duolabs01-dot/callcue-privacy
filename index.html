@@ -1,530 +1,797 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teamflect CallCue — Privacy Policy</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <script defer src="/_vercel/insights/script.js"></script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<script defer src="/_vercel/insights/script.js"></script>
+<title>Teamflect CallCue — Smart calling for HubSpot & LemList</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#FF7A59; --orange-2:#F4613C; --orange-deep:#E04A26;
+  --navy:#0B1220; --navy-2:#111A2E; --navy-3:#1B2640;
+  --green:#22C55E; --amber:#F59E0B; --red:#EF4444;
+  --bg:#05080F;
+  --surface:rgba(255,255,255,0.04);
+  --surface-2:rgba(255,255,255,0.06);
+  --border:rgba(255,255,255,0.08);
+  --border-strong:rgba(255,255,255,0.14);
+  --ink:#F8FAFC;
+  --ink-2:#CBD5E1;
+  --ink-3:#94A3B8;
+  --ink-4:#64748B;
+  --font:'Inter',system-ui,sans-serif;
+  --serif:'Instrument Serif',serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+html,body{min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{
+  background:
+    radial-gradient(1200px 600px at 80% -10%,rgba(255,122,89,.18),transparent 60%),
+    radial-gradient(900px 500px at 10% 30%,rgba(80,120,255,.10),transparent 60%),
+    radial-gradient(700px 700px at 50% 110%,rgba(255,122,89,.08),transparent 60%),
+    var(--bg);
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;border:none;background:none;cursor:pointer;color:inherit}
 
-    :root {
-      --orange: #ff7a59;
-      --orange-dim: rgba(255,122,89,.12);
-      --orange-glow: rgba(255,122,89,.25);
-      --navy:  #0b1220;
-      --navy2: #111c2f;
-      --navy3: #162035;
-      --border: #1e2d45;
-      --ink:    #f1f5f9;
-      --muted:  #94a3b8;
-      --subtle: #64748b;
-      --green:  #22c55e;
-      --green-dim: rgba(34,197,94,.1);
-      --amber:  #f59e0b;
-      --red:    #ef4444;
-    }
+/* Ambient grain */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.04;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* Stars */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+  background-image:
+    radial-gradient(1px 1px at 14% 22%,rgba(255,255,255,.5),transparent 50%),
+    radial-gradient(1px 1px at 78% 8%,rgba(255,255,255,.4),transparent 50%),
+    radial-gradient(1px 1px at 33% 64%,rgba(255,255,255,.35),transparent 50%),
+    radial-gradient(1px 1px at 88% 76%,rgba(255,255,255,.4),transparent 50%),
+    radial-gradient(1px 1px at 56% 90%,rgba(255,255,255,.3),transparent 50%);
+}
 
-    html { scroll-behavior: smooth; }
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:14px 28px;display:flex;justify-content:center;pointer-events:none}
+.nav-pill{pointer-events:all;display:flex;align-items:center;gap:24px;padding:8px 8px 8px 18px;background:rgba(11,18,32,.55);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid var(--border);border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.06)}
+.nav-brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:13px;letter-spacing:-.01em}
+.nav-brand .tf{color:var(--ink-3);font-weight:500}
+.nav-brand .cc{color:var(--ink)}
+.nav-brand .dot{color:var(--orange)}
+.nav-links{display:flex;gap:4px}
+.nav-links a{font-size:12.5px;color:var(--ink-3);padding:6px 12px;border-radius:999px;transition:all .2s}
+.nav-links a:hover{color:var(--ink);background:var(--surface)}
+.nav-cta{font-size:12px;font-weight:600;padding:8px 16px;border-radius:999px;background:var(--orange);color:#fff;display:flex;align-items:center;gap:6px;transition:all .2s}
+.nav-cta:hover{background:var(--orange-deep);transform:translateY(-1px)}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--navy);
-      color: var(--ink);
-      line-height: 1.7;
-      min-height: 100vh;
-    }
+/* Sections */
+section{position:relative;z-index:2}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
 
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 64px 24px 56px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);padding:6px 12px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.02)}
+.eyebrow .pulse{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(34,197,94,.18);animation:pulse 2s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 80% -10%, var(--orange-glow), transparent),
-        radial-gradient(ellipse 40% 40% at 10% 90%, rgba(34,197,94,.12), transparent);
-      pointer-events: none;
-    }
+/* Hero */
+.hero{padding:140px 0 80px;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(42px,6vw,84px);font-weight:600;letter-spacing:-.04em;line-height:.98;margin:18px 0 22px}
+.hero h1 .serif{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--orange);letter-spacing:-.02em}
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--orange-dim);
-      border: 1px solid var(--orange-glow);
-      border-radius: 999px;
-      padding: 4px 14px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--orange);
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
+/* Clickable signal words */
+.signal{position:relative;display:inline-block;cursor:pointer;font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em;transition:all .35s cubic-bezier(.34,1.3,.64,1);padding:0 .12em}
+.signal.s-green{color:#86EFAC}
+.signal.s-amber{color:#FCD34D}
+.signal.s-red{color:#FCA5A5}
+.signal.s-gray{color:#CBD5E1}
+.signal.s-edit{color:var(--orange)}
+.signal-edit-icon{display:inline-flex;align-items:center;justify-content:center;width:.7em;height:.7em;border-radius:50%;background:currentColor;color:var(--bg);margin-left:.18em;font-size:.45em;vertical-align:.35em;font-style:normal;font-family:var(--mono);font-weight:700;opacity:0;transform:scale(.6) translateY(2px);transition:all .25s cubic-bezier(.34,1.3,.64,1)}
+.signal:hover .signal-edit-icon,.signal[data-active="true"] .signal-edit-icon{opacity:1;transform:scale(1) translateY(0)}
 
-    .hero h1 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800;
-      color: var(--ink);
-      letter-spacing: -.02em;
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
+/* Card click affordance */
+.how-card{cursor:pointer}
+.how-card[data-active="true"]{border-color:var(--border-strong);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02))}
+.how-card[data-active="true"]::before{opacity:1}
+.how-card[data-active="true"] .mini-orb{transform:scale(1.15)}
+.how-card .mini-orb{transition:transform .4s cubic-bezier(.34,1.3,.64,1)}
+.hero p.sub{font-size:17px;line-height:1.55;color:var(--ink-2);max-width:520px;margin-bottom:28px}
+.hero-cta{display:flex;gap:10px;align-items:center}
+.btn{font-size:13px;font-weight:600;padding:12px 20px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;transition:all .2s;cursor:pointer}
+.btn-primary{background:var(--orange);color:#fff}
+.btn-primary:hover{background:var(--orange-deep);transform:translateY(-1px);box-shadow:0 12px 28px rgba(255,122,89,.3)}
+.btn-ghost{color:var(--ink-2);border:1px solid var(--border-strong)}
+.btn-ghost:hover{color:var(--ink);border-color:var(--ink-3);background:var(--surface)}
+.hero-meta{display:flex;gap:18px;margin-top:24px;font-size:11.5px;color:var(--ink-4);font-family:var(--mono)}
+.hero-meta span{display:inline-flex;align-items:center;gap:6px}
+.hero-meta .check{width:14px;height:14px;border-radius:50%;background:rgba(34,197,94,.15);color:var(--green);display:inline-flex;align-items:center;justify-content:center;font-size:9px}
 
-    .hero h1 span { color: var(--orange); }
+/* Orb stage */
+.stage{position:relative;height:520px;display:flex;align-items:center;justify-content:center;perspective:1200px}
+.stage::before{content:"";position:absolute;inset:10%;background:radial-gradient(circle,rgba(255,122,89,.25),transparent 70%);filter:blur(40px);animation:float 8s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-20px) scale(1.05)}}
 
-    .hero p {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 480px;
-      margin: 0 auto 32px;
-    }
+/* Clock ring */
+.clock{position:absolute;width:440px;height:440px;border-radius:50%;border:1px solid var(--border);pointer-events:none;animation:rotate 60s linear infinite}
+@keyframes rotate{to{transform:rotate(360deg)}}
+.tick{position:absolute;left:50%;top:0;width:1px;height:8px;background:var(--ink-3);transform-origin:50% 220px}
+.tick.major{height:14px;background:var(--ink-2);width:2px}
+.hour-label{position:absolute;font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.05em}
 
-    /* Status dots row */
-    .status-row {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--navy2);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 8px 20px;
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 0;
-    }
+.clock-2{position:absolute;width:340px;height:340px;border-radius:50%;border:1px dashed var(--border);animation:rotate 90s linear infinite reverse;opacity:.6}
 
-    .dot {
-      width: 9px; height: 9px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .dot-green  { background: var(--green);  box-shadow: 0 0 6px var(--green); }
-    .dot-amber  { background: var(--amber);  box-shadow: 0 0 6px var(--amber); }
-    .dot-red    { background: var(--red);    box-shadow: 0 0 6px var(--red); }
+/* Orb */
+.orb{position:relative;width:240px;height:240px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .8s cubic-bezier(.34,1.3,.64,1)}
+.orb-core{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,#FFB89B 30%,var(--orange) 60%,var(--orange-deep) 100%);box-shadow:0 0 80px rgba(255,122,89,.5),inset 0 -10px 30px rgba(0,0,0,.3),inset 0 10px 30px rgba(255,255,255,.2);transition:all .8s cubic-bezier(.34,1.3,.64,1)}
+.orb[data-state="green"] .orb-core{background:radial-gradient(circle at 30% 30%,#fff,#86EFAC 30%,#22C55E 60%,#15803D 100%);box-shadow:0 0 80px rgba(34,197,94,.5),inset 0 -10px 30px rgba(0,0,0,.3),inset 0 10px 30px rgba(255,255,255,.2)}
+.orb[data-state="amber"] .orb-core{background:radial-gradient(circle at 30% 30%,#fff,#FCD34D 30%,#F59E0B 60%,#B45309 100%);box-shadow:0 0 80px rgba(245,158,11,.5),inset 0 -10px 30px rgba(0,0,0,.3),inset 0 10px 30px rgba(255,255,255,.2)}
+.orb[data-state="red"] .orb-core{background:radial-gradient(circle at 30% 30%,#fff,#FCA5A5 30%,#EF4444 60%,#991B1B 100%);box-shadow:0 0 80px rgba(239,68,68,.5),inset 0 -10px 30px rgba(0,0,0,.3),inset 0 10px 30px rgba(255,255,255,.2)}
+.orb[data-state="gray"] .orb-core{background:radial-gradient(circle at 30% 30%,#fff,#CBD5E1 30%,#94A3B8 60%,#475569 100%);box-shadow:0 0 60px rgba(148,163,184,.35),inset 0 -10px 30px rgba(0,0,0,.3),inset 0 10px 30px rgba(255,255,255,.2)}
+.orb-glass{position:absolute;inset:8%;border-radius:50%;background:linear-gradient(135deg,rgba(255,255,255,.18),transparent 50%);pointer-events:none}
 
-    .sep { width: 1px; height: 14px; background: var(--border); }
+.orb-time{position:relative;z-index:2;text-align:center;mix-blend-mode:overlay;color:#fff}
+.orb-time .h{font-size:54px;font-weight:800;letter-spacing:-.04em;font-variant-numeric:tabular-nums;line-height:1;text-shadow:0 2px 6px rgba(0,0,0,.3)}
+.orb-time .tz{font-family:var(--mono);font-size:10px;letter-spacing:.18em;margin-top:4px;opacity:.85}
 
-    /* ── NAV ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(11,18,32,.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      gap: 0;
-    }
+/* Pulse rings */
+.pulse-ring{position:absolute;width:240px;height:240px;border-radius:50%;border:2px solid var(--orange);opacity:0;animation:expand 3s ease-out infinite}
+.orb[data-state="green"] .pulse-ring{border-color:var(--green)}
+.orb[data-state="amber"] .pulse-ring{border-color:var(--amber);animation-duration:5s}
+.orb[data-state="red"] .pulse-ring{border-color:var(--red);animation:none;opacity:0}
+.orb[data-state="gray"] .pulse-ring{border-color:#94A3B8;animation:none;opacity:0}
+.pulse-ring:nth-child(2){animation-delay:1s}
+.pulse-ring:nth-child(3){animation-delay:2s}
+@keyframes expand{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.8);opacity:0}}
 
-    nav a {
-      display: block;
-      padding: 14px 16px;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-      border-bottom: 2px solid transparent;
-      transition: color .15s, border-color .15s;
-    }
+/* Status label */
+.orb-status{position:absolute;bottom:-50px;left:50%;transform:translateX(-50%);text-align:center;white-space:nowrap}
+.orb-status-label{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;transition:color .4s}
+.orb[data-state="green"] ~ .orb-status .orb-status-label{color:#86EFAC}
+.orb[data-state="amber"] ~ .orb-status .orb-status-label{color:#FCD34D}
+.orb[data-state="red"] ~ .orb-status .orb-status-label{color:#FCA5A5}
+.orb[data-state="gray"] ~ .orb-status .orb-status-label{color:#CBD5E1}
+.orb-status-sub{font-size:11px;color:var(--ink-3);margin-top:4px}
 
-    nav a:hover { color: var(--ink); }
-    nav a.active { color: var(--orange); border-bottom-color: var(--orange); }
+/* State picker */
+.state-picker{position:absolute;bottom:-110px;left:50%;transform:translateX(-50%);display:flex;gap:6px;padding:5px;background:var(--surface);border:1px solid var(--border);border-radius:999px;backdrop-filter:blur(12px)}
+.state-picker button{padding:6px 14px;font-size:11px;font-weight:500;color:var(--ink-3);border-radius:999px;font-family:var(--mono);letter-spacing:.05em;transition:all .2s}
+.state-picker button.active{background:var(--surface-2);color:var(--ink)}
+.state-picker button:hover{color:var(--ink)}
 
-    nav .spacer { flex: 1; }
+/* Section header */
+.sec{padding:120px 0}
+.sec-head{max-width:680px;margin:0 auto 60px;text-align:center}
+.sec-head h2{font-size:clamp(34px,4.5vw,56px);font-weight:600;letter-spacing:-.03em;line-height:1.05;margin:14px 0 14px}
+.sec-head h2 .serif{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--orange)}
+.sec-head p{font-size:16px;line-height:1.6;color:var(--ink-2)}
 
-    nav .nav-contact {
-      font-size: 0.8rem;
-      padding: 8px 16px;
-      background: var(--orange-dim);
-      border: 1px solid var(--orange-glow);
-      border-radius: 8px;
-      color: var(--orange);
-      font-weight: 600;
-    }
+/* How it works */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.how-card{position:relative;padding:32px 24px;border:1px solid var(--border);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));backdrop-filter:blur(10px);overflow:hidden;transition:all .4s}
+.how-card:hover{border-color:var(--border-strong);transform:translateY(-4px)}
+.how-card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px 200px at 50% -50%,rgba(255,122,89,.12),transparent);opacity:0;transition:opacity .4s}
+.how-card:hover::before{opacity:1}
+.how-num{font-family:var(--mono);font-size:11px;color:var(--orange);letter-spacing:.18em;margin-bottom:18px}
+.how-card h3{font-size:20px;font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
+.how-card p{font-size:14px;line-height:1.6;color:var(--ink-3)}
+.how-illus{height:140px;margin-bottom:20px;border-radius:14px;background:rgba(255,255,255,.02);border:1px solid var(--border);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
 
-    nav .nav-contact:hover { background: rgba(255,122,89,.2); border-bottom-color: transparent; }
+/* Mini orb illus */
+.mini-orb{width:64px;height:64px;border-radius:50%;position:relative;animation:bob 3s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.mini-orb.green{background:radial-gradient(circle at 30% 30%,#fff,#86EFAC 30%,#22C55E 70%);box-shadow:0 0 40px rgba(34,197,94,.4)}
+.mini-orb.amber{background:radial-gradient(circle at 30% 30%,#fff,#FCD34D 30%,#F59E0B 70%);box-shadow:0 0 40px rgba(245,158,11,.4)}
+.mini-orb.red{background:radial-gradient(circle at 30% 30%,#fff,#FCA5A5 30%,#EF4444 70%);box-shadow:0 0 40px rgba(239,68,68,.4)}
+.mini-orb.gray{background:radial-gradient(circle at 30% 30%,#fff,#CBD5E1 30%,#94A3B8 70%);box-shadow:0 0 40px rgba(148,163,184,.3)}
 
-    /* ── MAIN CONTENT ── */
-    .wrap {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 52px 24px 80px;
-    }
+/* Features */
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.feat{padding:24px;border:1px solid var(--border);border-radius:18px;background:rgba(255,255,255,.02);backdrop-filter:blur(10px);transition:all .3s}
+.feat:hover{border-color:var(--border-strong);background:var(--surface)}
+.feat-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(255,122,89,.2),rgba(255,122,89,.06));border:1px solid rgba(255,122,89,.2);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--orange)}
+.feat h4{font-size:14px;font-weight:600;margin-bottom:6px}
+.feat p{font-size:12.5px;line-height:1.55;color:var(--ink-3)}
 
-    /* Section divider */
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
+/* Privacy */
+.privacy-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
+.privacy-stamp{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--green);margin-bottom:14px;display:inline-flex;align-items:center;gap:8px}
+.privacy-stamp::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(34,197,94,.18)}
+.privacy h2{font-size:clamp(34px,4.5vw,56px);font-weight:600;letter-spacing:-.03em;line-height:1.05;margin-bottom:18px}
+.privacy h2 .serif{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--green)}
+.privacy p.lede{font-size:16px;line-height:1.6;color:var(--ink-2);margin-bottom:24px}
 
-    .section-label .tag {
-      background: var(--orange-dim);
-      border: 1px solid var(--orange-glow);
-      color: var(--orange);
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      padding: 3px 10px;
-      border-radius: 4px;
-    }
+.priv-pillars{display:flex;flex-direction:column;gap:8px;margin-top:20px}
+.priv-pill{display:flex;gap:14px;padding:14px 16px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.02);align-items:flex-start}
+.priv-pill .icon{flex-shrink:0;width:32px;height:32px;border-radius:8px;background:rgba(34,197,94,.1);color:#86EFAC;display:flex;align-items:center;justify-content:center;border:1px solid rgba(34,197,94,.2)}
+.priv-pill h5{font-size:13px;font-weight:600;margin-bottom:4px}
+.priv-pill p{font-size:12px;line-height:1.55;color:var(--ink-3)}
 
-    .section-label hr {
-      flex: 1;
-      border: none;
-      border-top: 1px solid var(--border);
-    }
+/* Diagram */
+.diagram{position:relative;padding:32px;border:1px solid var(--border);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));backdrop-filter:blur(10px);min-height:420px}
+.diag-title{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-4);margin-bottom:18px;display:flex;justify-content:space-between}
+.diag-flow{display:flex;flex-direction:column;gap:12px}
+.diag-node{padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);display:flex;align-items:center;gap:12px;font-size:12.5px;position:relative}
+.diag-node.local{border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.04)}
+.diag-node.blocked{border-color:rgba(239,68,68,.25);background:rgba(239,68,68,.04);text-decoration:line-through;text-decoration-color:rgba(239,68,68,.6);color:var(--ink-3)}
+.diag-node .label{font-family:var(--mono);font-size:10px;color:var(--ink-4);letter-spacing:.1em;margin-left:auto}
+.diag-arrow{margin-left:18px;color:var(--ink-4);font-family:var(--mono);font-size:10px;display:flex;align-items:center;gap:6px}
+.diag-arrow .line{flex:1;height:1px;background:linear-gradient(90deg,var(--ink-4),transparent)}
 
-    h2 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--ink);
-      letter-spacing: -.02em;
-      margin-bottom: 6px;
-    }
+/* Install */
+.install-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
+.steps{display:flex;flex-direction:column;gap:14px}
+.step{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--border)}
+.step:last-child{border-bottom:none}
+.step-num{width:32px;height:32px;border-radius:50%;border:1px solid var(--border-strong);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink-2)}
+.step.active .step-num{background:var(--orange);border-color:var(--orange);color:#fff}
+.step h4{font-size:15px;font-weight:600;margin-bottom:6px}
+.step p{font-size:13px;line-height:1.55;color:var(--ink-3)}
+.step code{font-family:var(--mono);font-size:11.5px;padding:2px 6px;border-radius:4px;background:var(--surface-2);color:var(--orange);border:1px solid var(--border)}
 
-    .updated {
-      font-size: 0.8rem;
-      color: var(--subtle);
-      margin-bottom: 28px;
-    }
+/* Browser mockup */
+.chrome{border:1px solid var(--border-strong);border-radius:14px;background:#0E1522;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);position:sticky;top:100px}
+.chrome-bar{padding:10px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.02)}
+.chrome-dots{display:flex;gap:6px}
+.chrome-dots span{width:11px;height:11px;border-radius:50%}
+.chrome-dots span:nth-child(1){background:#FF5F57}
+.chrome-dots span:nth-child(2){background:#FEBC2E}
+.chrome-dots span:nth-child(3){background:#28C840}
+.chrome-url{flex:1;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);background:rgba(255,255,255,.04);padding:5px 12px;border-radius:6px;border:1px solid var(--border)}
+.chrome-body{padding:24px}
+.chrome-h{font-size:18px;font-weight:600;margin-bottom:4px}
+.chrome-sub{font-size:12px;color:var(--ink-3);margin-bottom:18px}
+.dev-toggle{display:flex;justify-content:flex-end;margin-bottom:14px}
+.toggle{position:relative;width:36px;height:20px;border-radius:999px;background:var(--orange);border:1px solid var(--orange-deep)}
+.toggle::after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:#fff;top:2px;right:2px}
+.toggle-label{font-size:11px;color:var(--ink-3);margin-right:8px;font-family:var(--mono);letter-spacing:.05em;text-transform:uppercase}
+.dev-row{display:flex;align-items:center;justify-content:flex-end}
+.ext-card{padding:14px;border:1px solid rgba(255,122,89,.3);border-radius:10px;background:rgba(255,122,89,.04);display:flex;gap:14px;align-items:center;animation:cardIn .6s cubic-bezier(.34,1.3,.64,1)}
+@keyframes cardIn{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.ext-icon{width:48px;height:48px;border-radius:12px;background:radial-gradient(circle at 30% 30%,#fff,#FFB89B 30%,var(--orange) 70%);box-shadow:0 4px 14px rgba(255,122,89,.4)}
+.ext-meta{flex:1}
+.ext-name{font-size:14px;font-weight:600}
+.ext-version{font-size:11px;color:var(--ink-3);font-family:var(--mono)}
+.ext-status{font-size:10.5px;color:var(--green);font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+.action-btns{display:flex;gap:6px}
+.action-btns button{font-size:11px;color:var(--ink-3);padding:5px 10px;border:1px solid var(--border);border-radius:6px}
+.btn-load-unpacked{background:var(--orange);color:#fff;border-color:var(--orange);font-size:12px;padding:8px 14px;border-radius:8px;font-weight:600}
 
-    h3 {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin: 32px 0 10px;
-    }
+/* CTA section */
+.cta{padding:120px 0;text-align:center;position:relative}
+.cta-card{position:relative;padding:64px 48px;border:1px solid var(--border-strong);border-radius:32px;background:linear-gradient(135deg,rgba(255,122,89,.08),rgba(11,18,32,.4));overflow:hidden}
+.cta-card::before{content:"";position:absolute;inset:0;background:radial-gradient(800px 400px at 50% 0%,rgba(255,122,89,.18),transparent 60%);pointer-events:none}
+.cta-card h2{font-size:clamp(36px,4.5vw,60px);font-weight:600;letter-spacing:-.03em;line-height:1.04;margin-bottom:14px;position:relative}
+.cta-card h2 .serif{font-family:var(--serif);font-style:italic;color:var(--orange);font-weight:400}
+.cta-card p{font-size:16px;color:var(--ink-2);margin-bottom:28px;position:relative}
+.cta-card .hero-cta{justify-content:center;position:relative}
 
-    p { font-size: 0.9375rem; color: var(--muted); }
-    ul { padding-left: 20px; }
-    li { font-size: 0.9375rem; color: var(--muted); margin-bottom: 7px; }
-    strong { color: var(--ink); font-weight: 600; }
+/* Footer */
+footer{padding:60px 0 40px;border-top:1px solid var(--border);position:relative;z-index:2}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.foot-brand{font-weight:700;font-size:13px;display:flex;align-items:center;gap:8px}
+.foot-meta{font-family:var(--mono);font-size:11px;color:var(--ink-4);letter-spacing:.04em}
+.foot-links{display:flex;gap:18px;font-size:12px;color:var(--ink-3)}
+.foot-links a:hover{color:var(--ink)}
 
-    /* Cards */
-    .card {
-      background: var(--navy2);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px 24px;
-      margin: 20px 0;
-      position: relative;
-      overflow: hidden;
-    }
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
 
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--orange), transparent);
-    }
+/* Motion intensity */
+body[data-motion="low"] .clock,body[data-motion="low"] .clock-2{animation:none}
+body[data-motion="low"] .pulse-ring{display:none}
+body[data-motion="low"] .stage::before{animation:none}
+body[data-motion="low"] .mini-orb{animation:none}
+body[data-motion="mid"] .clock{animation-duration:120s}
+body[data-motion="mid"] .clock-2{animation-duration:180s}
+body[data-motion="mid"] .pulse-ring{animation-duration:5s}
+body[data-motion="low"]::after,body[data-motion="mid"]::after{opacity:.6}
 
-    .card.green::before { background: linear-gradient(90deg, var(--green), transparent); }
+/* Density */
+body[data-density="compact"] .sec{padding:80px 0}
+body[data-density="compact"] .hero{padding:110px 0 60px}
+body[data-density="airy"] .sec{padding:160px 0}
+body[data-density="airy"] .hero{padding:170px 0 100px}
 
-    /* No-data pill */
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--green-dim);
-      color: var(--green);
-      border: 1px solid rgba(34,197,94,.25);
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 3px 12px;
-      margin-bottom: 12px;
-      letter-spacing: .02em;
-    }
+/* Tweaks panel */
+.tw-panel{position:fixed;bottom:24px;right:24px;z-index:1000;width:300px;background:rgba(11,18,32,.85);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid var(--border-strong);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06);padding:18px;color:var(--ink);font-family:var(--font);transform:translateY(0);transition:opacity .2s,transform .25s cubic-bezier(.34,1.3,.64,1);display:none}
+.tw-panel.open{display:block}
+.tw-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.tw-title{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+.tw-close{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.06);color:var(--ink-3);display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;border:none}
+.tw-close:hover{background:rgba(255,255,255,.12);color:var(--ink)}
+.tw-section{margin-bottom:14px}
+.tw-label{font-size:11px;color:var(--ink-3);margin-bottom:8px;display:flex;justify-content:space-between}
+.tw-label span:last-child{font-family:var(--mono);color:var(--ink-2)}
+.tw-row{display:flex;gap:6px}
+.tw-chip{flex:1;padding:7px 8px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid var(--border);font-size:11px;color:var(--ink-3);cursor:pointer;transition:all .2s;font-family:var(--font);text-align:center}
+.tw-chip:hover{color:var(--ink);border-color:var(--border-strong)}
+.tw-chip.active{background:var(--orange);color:#fff;border-color:var(--orange)}
+.tw-swatch{width:28px;height:28px;border-radius:8px;cursor:pointer;border:2px solid transparent;transition:all .2s}
+.tw-swatch.active{border-color:#fff;transform:scale(1.08)}
+.tw-slider{width:100%;-webkit-appearance:none;appearance:none;height:4px;background:rgba(255,255,255,.1);border-radius:2px;outline:none;cursor:pointer}
+.tw-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:16px;height:16px;border-radius:50%;background:var(--orange);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+.tw-slider::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--orange);cursor:pointer;border:none}
+.tw-toggle-fab{position:fixed;bottom:24px;right:24px;z-index:999;width:44px;height:44px;border-radius:50%;background:rgba(11,18,32,.85);backdrop-filter:blur(20px);border:1px solid var(--border-strong);color:var(--ink-2);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.5);transition:all .2s}
+.tw-toggle-fab:hover{color:var(--ink);transform:scale(1.05)}
+.tw-toggle-fab.hide{display:none}
 
-    .pill::before {
-      content: '';
-      width: 7px; height: 7px;
-      background: var(--green);
-      border-radius: 50%;
-      box-shadow: 0 0 5px var(--green);
-    }
-
-    /* Feature strip */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 12px;
-      margin: 28px 0;
-    }
-
-    .feature {
-      background: var(--navy2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px 18px;
-    }
-
-    .feature-icon {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-    }
-
-    .feature h4 {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 4px;
-    }
-
-    .feature p { font-size: 0.8rem; color: var(--subtle); }
-
-    /* Install steps */
-    .install-steps {
-      counter-reset: step;
-      list-style: none;
-      padding: 0;
-    }
-
-    .install-steps li {
-      counter-increment: step;
-      display: flex;
-      gap: 16px;
-      margin-bottom: 20px;
-      align-items: flex-start;
-    }
-
-    .install-steps li::before {
-      content: counter(step);
-      min-width: 30px; height: 30px;
-      background: var(--orange);
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 800;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-      box-shadow: 0 0 10px var(--orange-glow);
-    }
-
-    .install-steps li span { color: var(--muted); font-size: 0.9375rem; }
-
-    code {
-      background: var(--navy);
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      padding: 2px 7px;
-      font-size: 0.82em;
-      color: var(--orange);
-      font-family: "SFMono-Regular", Consolas, "Courier New", monospace;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 80px;
-      padding: 28px 24px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      background: var(--navy2);
-    }
-
-    footer p { font-size: 0.8rem; color: var(--subtle); }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--orange); }
-
-    .footer-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .footer-orb {
-      width: 28px; height: 28px;
-      background: var(--orange);
-      border-radius: 50%;
-      box-shadow: 0 0 12px var(--orange-glow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-    }
-
-    .footer-name {
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    a { color: var(--orange); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:40px}
+  .stage{height:420px}
+  .clock{width:340px;height:340px}
+  .privacy-wrap,.install-wrap{grid-template-columns:1fr;gap:32px}
+  .features{grid-template-columns:1fr 1fr}
+  .how-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .chrome{position:static}
+}
+@media (max-width:600px){
+  .features,.how-grid{grid-template-columns:1fr}
+  .sec{padding:80px 0}
+  .hero{padding:120px 0 60px}
+}
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="root"></div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-badge">Chrome Extension · HubSpot &amp; LemList</div>
-    <h1>Teamflect <span>CallCue</span></h1>
-    <p>Live calling-availability intelligence for sales teams. Know exactly when to call — before you dial.</p>
-    <div class="status-row">
-      <div class="dot dot-green"></div> Callable now
-      <div class="sep"></div>
-      <div class="dot dot-amber"></div> Approaching hours
-      <div class="sep"></div>
-      <div class="dot dot-red"></div> Outside hours
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+
+// Reveal hook
+function useReveal(){
+  useEffect(()=>{
+    const els=document.querySelectorAll('.reveal');
+    const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.12});
+    els.forEach(el=>io.observe(el));
+    return()=>io.disconnect();
+  },[]);
+}
+
+const STATES = {
+  green:{label:'Best time',sub:"It's a great time to call",hour:'10:42'},
+  amber:{label:'Outside hours',sub:'Within local working hours but outside their pref',hour:'18:15'},
+  red:{label:"Don't call",sub:"It's late or non-working hours",hour:'22:51'},
+  gray:{label:'Unresolved',sub:"No timezone or working hours on file",hour:'--:--'}
+};
+
+function HeroOrb({state, setState}){
+  const [hour,setHour]=useState(STATES[state].hour);
+  useEffect(()=>{setHour(STATES[state].hour)},[state]);
+  const ticks = [];
+  for(let i=0;i<24;i++){
+    ticks.push(<div key={i} className={`tick ${i%6===0?'major':''}`} style={{transform:`rotate(${i*15}deg)`}}/>);
+  }
+  return(
+    <div className="stage">
+      <div className="clock">{ticks}
+        {[0,6,12,18].map((h,i)=>(<div key={i} className="hour-label" style={{
+          left:'50%',top:'50%',
+          transform:`rotate(${h*15}deg) translateY(-208px) rotate(-${h*15}deg) translate(-50%,-50%)`
+        }}>{String(h).padStart(2,'0')}</div>))}
+      </div>
+      <div className="clock-2"></div>
+      <div className="orb" data-state={state}>
+        <div className="pulse-ring"></div>
+        <div className="pulse-ring"></div>
+        <div className="pulse-ring"></div>
+        <div className="orb-core"></div>
+        <div className="orb-glass"></div>
+        <div className="orb-time">
+          <div className="h">{hour}</div>
+          <div className="tz">EDT · NEW YORK</div>
+        </div>
+      </div>
+      <div className="orb-status">
+        <div className="orb-status-label">{STATES[state].label}</div>
+        <div className="orb-status-sub">{STATES[state].sub}</div>
+      </div>
+      <div className="state-picker">
+        {['green','amber','red','gray'].map(s=>(
+          <button key={s} className={state===s?'active':''} onClick={()=>setState(s)}>{s.toUpperCase()}</button>
+        ))}
+      </div>
     </div>
-  </section>
+  );
+}
 
-  <!-- NAV -->
-  <nav>
-    <a href="#privacy" class="active">Privacy Policy</a>
-    <a href="#install">Developer Install</a>
-    <div class="spacer"></div>
-    <a href="mailto:kevin@teamflect.com" class="nav-contact">Contact</a>
-  </nav>
+function Icon({name,size=18}){
+  const props={width:size,height:size,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:1.6,strokeLinecap:'round',strokeLinejoin:'round'};
+  switch(name){
+    case 'shield': return <svg {...props}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>;
+    case 'lock': return <svg {...props}><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>;
+    case 'eye-off': return <svg {...props}><path d="M9.88 9.88a3 3 0 104.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0112 5c7 0 10 7 10 7a13.16 13.16 0 01-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 002 12s3 7 10 7a9.74 9.74 0 005.39-1.61"/><path d="M2 2l20 20"/></svg>;
+    case 'globe': return <svg {...props}><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>;
+    case 'clock': return <svg {...props}><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>;
+    case 'phone': return <svg {...props}><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>;
+    case 'zap': return <svg {...props}><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>;
+    case 'users': return <svg {...props}><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>;
+    case 'database': return <svg {...props}><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>;
+    case 'arrow-right': return <svg {...props}><path d="M5 12h14M12 5l7 7-7 7"/></svg>;
+    case 'sparkles': return <svg {...props}><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/><path d="M19 14l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/></svg>;
+    default: return null;
+  }
+}
 
-  <div class="wrap">
+// Inline interactive signal-colored word — click to set hero orb to that state
+function SignalWord({color,state,setState,children}){
+  const active = state===color;
+  return (
+    <span
+      className={`signal s-${color}`}
+      data-active={active}
+      onClick={()=>setState(color)}
+      title={`Set orb to ${color.toUpperCase()}`}
+    >
+      {children}
+      <span className="signal-edit-icon">✎</span>
+    </span>
+  );
+}
 
-    <!-- ── PRIVACY ── -->
-    <section id="privacy">
-      <div class="section-label">
-        <span class="tag">Privacy</span>
-        <hr />
-      </div>
+// Cycle word — click to advance through GREEN → AMBER → RED → GRAY
+function SignalCycle({state,setState}){
+  const order = ['green','amber','red','gray'];
+  const labels = {green:'green signals',amber:'amber signals',red:'red signals',gray:'unresolved signals'};
+  const cls = `signal s-${state}`;
+  return (
+    <span
+      className={cls}
+      data-active="true"
+      onClick={()=>{
+        const next = order[(order.indexOf(state)+1)%3];
+        setState(next);
+      }}
+      title="Click to cycle states"
+    >
+      {labels[state]}
+      <span className="signal-edit-icon">✎</span>
+    </span>
+  );
+}
 
-      <h2>Privacy Policy</h2>
-      <p class="updated">Last updated: May 2026</p>
+function App(){
+  useReveal();
+  const [state,setState]=useState('green');
+  const [autoRotate,setAutoRotate]=useState(true);
+  const [motion,setMotion]=useState(80);
+  const [density,setDensity]=useState('default');
+  const [accent,setAccent]=useState('orange');
 
-      <div class="card green">
-        <span class="pill">No data collected</span>
-        <p>Teamflect CallCue does not collect, transmit, store remotely, or share any personal information or user data of any kind. Everything stays in your browser.</p>
-      </div>
+  // Auto-rotate orb states (pauses on user interaction)
+  useEffect(()=>{
+    if(!autoRotate) return;
+    const seq=['green','amber','red','gray'];
+    const t=setInterval(()=>{
+      setState(s=>seq[(seq.indexOf(s)+1)%seq.length]);
+    },5000);
+    return()=>clearInterval(t);
+  },[autoRotate]);
 
-      <div class="features">
-        <div class="feature">
-          <div class="feature-icon">🔒</div>
-          <h4>100% Local</h4>
-          <p>All processing happens in-browser, in memory. Nothing ever leaves your device.</p>
+  // Stop auto-rotate when user clicks any signal manually
+  const setStateManual = (s)=>{ setAutoRotate(false); setState(s); };
+
+  // Apply tweaks to CSS vars
+  useEffect(()=>{
+    const palettes = {
+      orange: {a:'#FF7A59', a2:'#F4613C', d:'#E04A26'},
+      violet: {a:'#A78BFA', a2:'#8B5CF6', d:'#6D28D9'},
+      cyan:   {a:'#22D3EE', a2:'#0891B2', d:'#0E7490'},
+      lime:   {a:'#A3E635', a2:'#84CC16', d:'#4D7C0F'},
+    };
+    const p = palettes[accent] || palettes.orange;
+    document.documentElement.style.setProperty('--orange', p.a);
+    document.documentElement.style.setProperty('--orange-2', p.a2);
+    document.documentElement.style.setProperty('--orange-deep', p.d);
+  },[accent]);
+
+  useEffect(()=>{
+    document.documentElement.style.setProperty('--motion-speed', (200-motion)+'%');
+    document.documentElement.style.setProperty('--motion-opacity', (motion/100));
+    // Toggle pulse rings opacity / star opacity / clock rotation
+    document.body.dataset.motion = motion < 30 ? 'low' : (motion < 70 ? 'mid' : 'high');
+  },[motion]);
+
+  useEffect(()=>{
+    document.body.dataset.density = density;
+  },[density]);
+
+  const [twOpen,setTwOpen]=useState(false);
+
+  // Tweaks host protocol: only show panel when toolbar Tweaks toggle is on
+  useEffect(()=>{
+    const onMsg = (e)=>{
+      if(!e.data || typeof e.data !== 'object') return;
+      if(e.data.type === '__activate_edit_mode') setTwOpen(true);
+      if(e.data.type === '__deactivate_edit_mode') setTwOpen(false);
+    };
+    window.addEventListener('message', onMsg);
+    window.parent.postMessage({type:'__edit_mode_available'},'*');
+    return ()=>window.removeEventListener('message', onMsg);
+  },[]);
+
+  const closeTweaks = ()=>{
+    setTwOpen(false);
+    window.parent.postMessage({type:'__edit_mode_dismissed'},'*');
+  };
+
+  return(<>
+    <nav className="nav">
+      <div className="nav-pill">
+        <div className="nav-brand">
+          <span className="dot">●</span>
+          <span className="tf">Teamflect</span>
+          <span style={{color:'var(--ink-4)'}}>/</span>
+          <span className="cc">CallCue</span>
         </div>
-        <div class="feature">
-          <div class="feature-icon">📡</div>
-          <h4>No Network Calls</h4>
-          <p>The extension makes zero outbound requests — no servers, no APIs, no tracking.</p>
+        <div className="nav-links">
+          <a href="#how">How it works</a>
+          <a href="#features">Features</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#install">Install</a>
         </div>
-        <div class="feature">
-          <div class="feature-icon">🧹</div>
-          <h4>No Analytics</h4>
-          <p>No telemetry, no crash reporting, no usage data collected whatsoever.</p>
-        </div>
+        <a href="#install" className="nav-cta">Add to Chrome <Icon name="arrow-right" size={12}/></a>
       </div>
+    </nav>
 
-      <h3>What the extension does</h3>
-      <p>CallCue is a Chrome extension for sales teams using HubSpot and LemList. It reads contact fields visible on the currently open page — timezone, phone number, country, city — and uses that information locally to calculate whether the contact is within their working hours right now. The result is shown as a floating status orb and panel in your browser tab.</p>
-
-      <h3>Data processing</h3>
-      <ul>
-        <li>All computation is performed <strong>locally in your browser</strong>, entirely in memory.</li>
-        <li>No contact data, page content, or computed results are sent to any server.</li>
-        <li>No analytics, telemetry, or crash reporting is collected.</li>
-        <li>The extension makes no outbound network requests.</li>
-      </ul>
-
-      <h3>Local storage</h3>
-      <p>CallCue uses Chrome's <code>storage</code> API solely to save your UI preferences — panel theme, SDR working hours, and orb position. This data never leaves your device and contains no contact or personal information.</p>
-
-      <h3>Permissions</h3>
-      <ul>
-        <li><strong>activeTab</strong> — to read contact fields rendered in the active HubSpot or LemList tab.</li>
-        <li><strong>storage</strong> — to persist your UI preferences locally on-device.</li>
-        <li><strong>Host access (app.hubspot.com, app.lemlist.com)</strong> — required to inject content scripts into these single-page applications so contact field data can be read from the live DOM.</li>
-      </ul>
-
-      <h3>Third parties</h3>
-      <p>No user data is sold, transferred, or disclosed to any third party for any purpose.</p>
-
-      <h3>Children's privacy</h3>
-      <p>This extension is intended for professional use by sales teams and is not directed at children under 13.</p>
-
-      <h3>Changes to this policy</h3>
-      <p>If this policy changes materially, the "last updated" date above will reflect it. Continued use of the extension constitutes acceptance of the updated policy.</p>
-
-      <h3>Contact</h3>
-      <p>Questions? Email <a href="mailto:kevin@teamflect.com">kevin@teamflect.com</a>.</p>
+    <section className="hero">
+      <div className="wrap" style={{gridColumn:'1 / -1',display:'grid',gridTemplateColumns:'1.1fr 1fr',gap:60,alignItems:'center'}}>
+        <div className="reveal in">
+          <span className="eyebrow"><span className="pulse"></span>For HubSpot · LemList · Beta</span>
+          <h1>Know <SignalWord color="green" state={state} setState={setStateManual}>when</SignalWord> to call.<br/>Before you <SignalWord color="red" state={state} setState={setStateManual}>dial</SignalWord>.</h1>
+          <p className="sub">CallCue lives in your CRM and reads timezone, working hours, and call history — then tells you in one glance whether <em>now</em> is the right moment.</p>
+          <div className="hero-cta">
+            <a href="#install" className="btn btn-primary">Add to Chrome <Icon name="arrow-right" size={14}/></a>
+            <a href="#how" className="btn btn-ghost">See how it works</a>
+          </div>
+          <div className="hero-meta">
+            <span><span className="check">✓</span>No data collected</span>
+            <span><span className="check">✓</span>Local-only</span>
+            <span><span className="check">✓</span>Free during beta</span>
+          </div>
+        </div>
+        <HeroOrb state={state} setState={setStateManual}/>
+      </div>
     </section>
 
-    <!-- ── INSTALL ── -->
-    <section id="install" style="margin-top: 72px;">
-      <div class="section-label">
-        <span class="tag">Install</span>
-        <hr />
-      </div>
-
-      <h2>Developer Mode Install</h2>
-      <p style="margin-bottom: 28px;">While the extension awaits Chrome Web Store approval, install it directly from the zip your team shared — takes under two minutes.</p>
-
-      <div class="card">
-        <h3 style="margin-top:0;">Requirements</h3>
-        <ul>
-          <li>Google Chrome (or any Chromium browser — Edge, Brave, Arc)</li>
-          <li>The <strong>CallCue zip file</strong> shared by your team lead</li>
-        </ul>
-      </div>
-
-      <h3>Steps</h3>
-      <ol class="install-steps">
-        <li><span><strong>Extract the zip.</strong> Right-click the zip file → <strong>Extract All</strong>. Save the extracted folder somewhere permanent — Desktop or Documents works. Don't move or delete it after installing.</span></li>
-        <li><span>Open Chrome and go to <code>chrome://extensions</code>.</span></li>
-        <li><span>In the top-right corner, enable <strong>Developer mode</strong> using the toggle. A new toolbar will appear at the top.</span></li>
-        <li><span>Click <strong>Load unpacked</strong> in that toolbar.</span></li>
-        <li><span>In the file picker, select the folder you extracted — it should contain a file called <code>manifest.json</code>. Click <strong>Select Folder</strong>.</span></li>
-        <li><span><strong>Teamflect CallCue</strong> will appear in your extensions list. Active immediately — no restart needed.</span></li>
-        <li><span>Click the puzzle-piece icon <strong>⊞</strong> in your Chrome toolbar → find CallCue → click the <strong>pin icon</strong> to keep it visible.</span></li>
-        <li><span>Open HubSpot or LemList and go to any contact record. The CallCue orb will appear automatically.</span></li>
-      </ol>
-
-      <div class="card" style="margin-top:28px;">
-        <h3 style="margin-top:0;">Updating to a new version</h3>
-        <p>When a new zip is shared, extract it to the <strong>same folder location</strong>, overwriting the old files. Then go to <code>chrome://extensions</code> and click the <strong>↺ refresh icon</strong> on the CallCue card. The new version is live instantly.</p>
-      </div>
-
-      <div class="card" style="margin-top:16px;">
-        <h3 style="margin-top:0;">Orb not appearing?</h3>
-        <ul>
-          <li>Make sure you're on a <strong>contact record page</strong>, not the dashboard.</li>
-          <li>Click the CallCue icon in your toolbar and hit <strong>Refresh</strong>.</li>
-          <li>Still nothing? Go to <code>chrome://extensions</code> → click ↺ on the CallCue card → reload HubSpot.</li>
-        </ul>
+    <section className="sec" id="how">
+      <div className="wrap">
+        <div className="sec-head reveal">
+          <span className="eyebrow">How it works</span>
+          <h2>One orb. Three <SignalCycle state={state} setState={setStateManual}/>. Zero guesswork.</h2>
+          <p>Watch the launcher change color as you move between contacts. The dot tells you everything before you've finished reading their name.</p>
+        </div>
+        <div className="how-grid">
+          {[
+            {color:'green',num:'01',title:'Right time',body:"Local time falls inside their working hours, you haven't called recently, and lifecycle signals are warm. Dial with confidence."},
+            {color:'amber',num:'02',title:'Caution',body:"It's their working hours, but borderline — early morning, lunch, end of day. CallCue surfaces the why so you can judge."},
+            {color:'red',num:'03',title:"Don't call",body:"Late, weekend, or way outside hours. The orb flashes red and the panel suggests a better window."},
+            {color:'gray',num:'04',title:'Unresolved',body:"No timezone, working hours, or location on file. CallCue can't make a recommendation — fill in the contact data first."}
+          ].map(c=>(
+            <div key={c.num} className="how-card reveal" data-active={state===c.color} onClick={()=>setStateManual(c.color)}>
+              <div className="how-illus"><div className={`mini-orb ${c.color}`}></div></div>
+              <div className="how-num">{c.num} · {c.title.toUpperCase()}</div>
+              <h3>{c.title}</h3>
+              <p>{c.body}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
-  </div>
+    <section className="sec" id="features">
+      <div className="wrap">
+        <div className="sec-head reveal">
+          <span className="eyebrow">Features</span>
+          <h2>Built for the way <span className="serif">sales</span> actually works.</h2>
+          <p>No new dashboard. No login. CallCue overlays the tools your team already lives in.</p>
+        </div>
+        <div className="features">
+          {[
+            {icon:'globe',h:'Timezone aware',p:'Detects local time from contact city, country, or phone number prefix.'},
+            {icon:'clock',h:'Working hours',p:"Respects each contact's preferred call windows — and your team's defaults."},
+            {icon:'phone',h:'Call history',p:'Remembers when you last called and prevents accidental same-day repeats.'},
+            {icon:'zap',h:'HubSpot + LemList',p:'Drops into list views, contact panels, and sequence editors automatically.'},
+            {icon:'users',h:'Drag anywhere',p:'The launcher floats. Pin it to any corner of any contact page.'},
+            {icon:'sparkles',h:'Quick actions',p:'Tap to call, log activity, or copy the local time straight to clipboard.'},
+            {icon:'database',h:'Zero servers',p:'All logic runs in your browser. No CallCue cloud. No third-party APIs.'},
+            {icon:'shield',h:'SOC-friendly',p:'Submitted to legal? Hand them this page. Nothing sensitive ever leaves the tab.'}
+          ].map(f=>(
+            <div key={f.h} className="feat reveal">
+              <div className="feat-icon"><Icon name={f.icon} size={18}/></div>
+              <h4>{f.h}</h4>
+              <p>{f.p}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-brand">
-      <div class="footer-orb">📞</div>
-      <span class="footer-name">Teamflect CallCue</span>
+    <section className="sec privacy" id="privacy">
+      <div className="wrap">
+        <div className="privacy-wrap">
+          <div className="reveal">
+            <div className="privacy-stamp">PRIVACY · FORENSIC BREAKDOWN</div>
+            <h2>Nothing leaves <span className="serif">your browser.</span></h2>
+            <p className="lede">CallCue runs entirely client-side. No backend. No analytics. No telemetry. Here's exactly what's stored locally — and what we explicitly don't touch.</p>
+            <div className="priv-pillars">
+              {[
+                {h:'Local-only storage',p:'Preferences and call history live in chrome.storage.local on your device. Wiped when you uninstall.'},
+                {h:'No network calls',p:"CallCue's manifest declares zero host permissions. The extension cannot reach the internet — by design."},
+                {h:'No analytics',p:'No Mixpanel. No Segment. No Sentry. We don\'t even know you opened the panel.'}
+              ].map(p=>(
+                <div key={p.h} className="priv-pill">
+                  <div className="icon"><Icon name="lock" size={14}/></div>
+                  <div><h5>{p.h}</h5><p>{p.p}</p></div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="diagram reveal">
+            <div className="diag-title"><span>DATA FLOW DIAGRAM</span><span style={{color:'#86EFAC'}}>● VERIFIED</span></div>
+            <div className="diag-flow">
+              <div className="diag-node local"><Icon name="globe" size={16}/>Contact in HubSpot/LemList<span className="label">DOM READ</span></div>
+              <div className="diag-arrow"><span>parse timezone</span><span className="line"></span></div>
+              <div className="diag-node local"><Icon name="clock" size={16}/>CallCue logic (in-page)<span className="label">JS</span></div>
+              <div className="diag-arrow"><span>compute status</span><span className="line"></span></div>
+              <div className="diag-node local"><Icon name="database" size={16}/>chrome.storage.local<span className="label">YOUR DEVICE</span></div>
+              <div style={{height:1,background:'var(--border)',margin:'14px 0'}}></div>
+              <div className="diag-node blocked"><Icon name="eye-off" size={16}/>External servers<span className="label" style={{color:'#FCA5A5'}}>BLOCKED</span></div>
+              <div className="diag-node blocked"><Icon name="eye-off" size={16}/>Analytics tracking<span className="label" style={{color:'#FCA5A5'}}>BLOCKED</span></div>
+              <div className="diag-node blocked"><Icon name="eye-off" size={16}/>Third-party APIs<span className="label" style={{color:'#FCA5A5'}}>BLOCKED</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="sec" id="install">
+      <div className="wrap">
+        <div className="sec-head reveal">
+          <span className="eyebrow">Install</span>
+          <h2>Up and running in <span className="serif">90 seconds.</span></h2>
+          <p>While we're in beta, CallCue installs as an unpacked extension. Once you've got the .zip, follow these four steps.</p>
+        </div>
+        <div className="install-wrap">
+          <div className="steps reveal">
+            {[
+              {n:'1',h:'Download the zip',p:<>We'll email you the <code>Teamflect-CallCue-v0.3.32-chrome-store.zip</code>. Unpack it somewhere stable — Documents works.</>},
+              {n:'2',h:'Open Chrome extensions',p:<>Visit <code>chrome://extensions</code> and toggle <strong>Developer mode</strong> on (top-right).</>},
+              {n:'3',h:'Load unpacked',p:<>Click <strong>Load unpacked</strong> and select the unpacked folder. CallCue's orb will appear next to your address bar.</>},
+              {n:'4',h:'Pin and open HubSpot',p:<>Pin the extension, head to a contact page, and the floating launcher will dock itself. You're live.</>}
+            ].map((s,i)=>(
+              <div key={s.n} className={`step ${i===2?'active':''}`}>
+                <div className="step-num">{s.n}</div>
+                <div><h4>{s.h}</h4><p>{s.p}</p></div>
+              </div>
+            ))}
+          </div>
+          <div className="chrome reveal">
+            <div className="chrome-bar">
+              <div className="chrome-dots"><span></span><span></span><span></span></div>
+              <div className="chrome-url">chrome://extensions</div>
+            </div>
+            <div className="chrome-body">
+              <div className="chrome-h">Extensions</div>
+              <div className="chrome-sub">Manage your installed extensions</div>
+              <div className="dev-row">
+                <span className="toggle-label">Developer mode</span>
+                <div className="toggle"></div>
+              </div>
+              <div style={{display:'flex',gap:8,margin:'14px 0'}}>
+                <button className="btn-load-unpacked">Load unpacked</button>
+                <button style={{padding:'8px 14px',border:'1px solid var(--border)',borderRadius:8,fontSize:12,color:'var(--ink-3)'}}>Pack extension</button>
+                <button style={{padding:'8px 14px',border:'1px solid var(--border)',borderRadius:8,fontSize:12,color:'var(--ink-3)'}}>Update</button>
+              </div>
+              <div className="ext-card">
+                <div className="ext-icon"></div>
+                <div className="ext-meta">
+                  <div className="ext-name">Teamflect CallCue</div>
+                  <div className="ext-version">v0.3.32 · ID acdfgh...</div>
+                  <div className="ext-status">● ENABLED</div>
+                </div>
+                <div className="action-btns">
+                  <button>Details</button>
+                  <button>Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="cta">
+      <div className="wrap">
+        <div className="cta-card reveal">
+          <h2>Stop guessing. <span className="serif">Start dialing.</span></h2>
+          <p>Free during beta. No data collected. Uninstall any time.</p>
+          <div className="hero-cta" style={{justifyContent:'center'}}>
+            <a href="#" className="btn btn-primary">Request beta access <Icon name="arrow-right" size={14}/></a>
+            <a href="#privacy" className="btn btn-ghost">Read the privacy policy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div className="wrap foot">
+        <div className="foot-brand"><span style={{color:'var(--orange)'}}>●</span> Teamflect / CallCue</div>
+        <div className="foot-links">
+          <a href="#privacy">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="mailto:hello@teamflect.com">Contact</a>
+          <a href="https://teamflect.com" target="_blank">Teamflect.com</a>
+        </div>
+        <div className="foot-meta">© 2026 · v0.3.32 · BUILT IN PUBLIC</div>
+      </div>
+    </footer>
+
+    {!twOpen && <button className="tw-toggle-fab" onClick={()=>setTwOpen(true)} title="Open tweaks" style={{display:'none'}}>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h0a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51h0a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v0a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+    </button>}
+
+    <div className={`tw-panel ${twOpen?'open':''}`}>
+      <div className="tw-head">
+        <span className="tw-title">Tweaks</span>
+        <button className="tw-close" onClick={closeTweaks}>×</button>
+      </div>
+
+      <div className="tw-section">
+        <div className="tw-label"><span>Orb state</span><span>{state.toUpperCase()}</span></div>
+        <div className="tw-row">
+          {['green','amber','red','gray'].map(s=>(
+            <button key={s} className={`tw-chip ${state===s?'active':''}`} onClick={()=>setStateManual(s)}>{s}</button>
+          ))}
+        </div>
+      </div>
+
+      <div className="tw-section">
+        <div className="tw-label"><span>Auto-rotate</span><span>{autoRotate?'ON':'OFF'}</span></div>
+        <div className="tw-row">
+          <button className={`tw-chip ${autoRotate?'active':''}`} onClick={()=>setAutoRotate(true)}>On</button>
+          <button className={`tw-chip ${!autoRotate?'active':''}`} onClick={()=>setAutoRotate(false)}>Off</button>
+        </div>
+      </div>
+
+      <div className="tw-section">
+        <div className="tw-label"><span>Accent</span><span>{accent}</span></div>
+        <div className="tw-row">
+          {[
+            {k:'orange',c:'#FF7A59'},
+            {k:'violet',c:'#A78BFA'},
+            {k:'cyan',c:'#22D3EE'},
+            {k:'lime',c:'#A3E635'},
+          ].map(p=>(
+            <div key={p.k} className={`tw-swatch ${accent===p.k?'active':''}`} style={{background:p.c}} onClick={()=>setAccent(p.k)} title={p.k}/>
+          ))}
+        </div>
+      </div>
+
+      <div className="tw-section">
+        <div className="tw-label"><span>Motion</span><span>{motion}%</span></div>
+        <input type="range" min="0" max="100" step="10" value={motion} onChange={e=>setMotion(+e.target.value)} className="tw-slider"/>
+      </div>
+
+      <div className="tw-section">
+        <div className="tw-label"><span>Density</span><span>{density}</span></div>
+        <div className="tw-row">
+          {['compact','default','airy'].map(d=>(
+            <button key={d} className={`tw-chip ${density===d?'active':''}`} onClick={()=>setDensity(d)}>{d}</button>
+          ))}
+        </div>
+      </div>
     </div>
-    <p>&copy; 2026 Teamflect &nbsp;·&nbsp; <a href="mailto:kevin@teamflect.com">kevin@teamflect.com</a></p>
-  </footer>
+  </>);
+}
 
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
 </body>
 </html>
